@@ -1,7 +1,7 @@
 let backdrop = document.querySelector('.backdrop');
 let modal = document.querySelector('.modal');
 let selectPlanButtons = document.querySelectorAll('.plan button');
-let close = document.querySelector('button.modal__action--negative');
+let modalNoButton = document.querySelector('button.modal__action--negative');
 
 selectPlanButtons.forEach((i) => {
   i.addEventListener('click', () => {
@@ -10,7 +10,10 @@ selectPlanButtons.forEach((i) => {
   });
 });
 
-close.addEventListener('click', () => {
-  modal.style.display = 'none';
+backdrop.addEventListener('click', closeModal);
+modalNoButton.addEventListener('click', closeModal);
+
+function closeModal() {
   backdrop.style.display = 'none';
-});
+  modal.style.display = 'none';
+}
