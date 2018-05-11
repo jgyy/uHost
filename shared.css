@@ -7,6 +7,17 @@ body {
     margin: 0;
 }
 
+.backdrop {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 main {
     margin-top: 50px;
 }
@@ -17,7 +28,7 @@ main {
     top: 0;
     left: 0;
     background: #2ddf5c;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     z-index: 4;
 }
 
@@ -31,12 +42,18 @@ main {
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+    width: 32px;
+    display: inline-block;
+}
+
+.main-header__brand img {
+    width: 100%;
 }
 
 .main-nav {
     display: inline-block;
     text-align: right;
-    width: calc(100% - 74px);
+    width: calc(100% - 48px);
     vertical-align: middle;
 }
 
@@ -130,38 +147,36 @@ main {
     outline: none;
 }
 
-.one {
+.one, .six {
     z-index: 1;
-    position: sticky;
-    top: 64px;
 }
 
-.two {
+.two, .five {
     z-index: 2;
-    position: sticky;
-    top: 64px;
 }
 
-.three {
+.three, .four {
     z-index: 3;
-    position: sticky;
-    top: 64px;
 }
 
-@media only screen and (max-width: 500px) {
+.one, .two, .three, .four, .five, .six {
+    position: sticky;
+}
+
+.one, .two, .three {
+    top: 4rem;
+}
+
+.four, .five, .six {
+    bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
     .main-nav__item {
-        margin-left: 16vw;
+        margin-left: 20vw;
     }
 
-    .one {
-        top: 128px;
-    }
-
-    .two {
-        top: 128px;
-    }
-
-    .three {
+    .one, .two, .three {
         top: 128px;
     }
 }
