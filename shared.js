@@ -8,7 +8,10 @@ let mobileNav = document.querySelector('.mobile-nav');
 selectPlanButtons.forEach((i) => {
   i.addEventListener('click', () => {
     modal.classList.add('open');
-    backdrop.classList.add('open');
+    backdrop.style.display = 'block';
+    setTimeout(() => {
+      backdrop.classList.add('open');
+    }, 10);
   });
 });
 
@@ -22,13 +25,19 @@ if (modalNoButton) {
 }
 
 function closeModal() {
-  if(modal) {
+  if (modal) {
     modal.classList.remove('open');
   }
   backdrop.classList.remove('open');
+  setTimeout(() => {
+    backdrop.style.display = 'none';
+  }, 200);
 }
 
 toggleButton.addEventListener('click', () => {
   mobileNav.classList.add('open');
-  backdrop.classList.add('open');
+  backdrop.style.display = 'block';
+  setTimeout(() => {
+    backdrop.classList.add('open');
+  }, 10);
 });
