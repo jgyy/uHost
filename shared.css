@@ -167,6 +167,10 @@ main {
     color: #ccc;
 }
 
+.main-nav__item--cta {
+    animation: wiggle 400ms 3s 8 ease-out none;
+}
+
 .mobile-nav {
     position: fixed;
     z-index: 101;
@@ -177,8 +181,8 @@ main {
     max-width: 256px;
     height: 100vh;
     opacity: 0;
-    transform: translateX(-15rem);
-    transition: opacity 0.2s linear, transform 0.5s linear;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease-out, transform 0.5s linear;
 }
   
 .mobile-nav__items {
@@ -249,4 +253,16 @@ main {
     .main-nav {
         display: flex;
     }   
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(10deg);
+    }
 }
